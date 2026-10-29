@@ -1,6 +1,6 @@
 /* Landing Meta v2 · Herrera Producciones
-   Mide: ViewContent (ver la escalera), Contact (1 vez por sesión), WA_Toque (cada toque),
-   Plan_Visto, Scroll_50/90, FAQ_Abierta. El píxel NO se carga en localhost. */
+   Mide: ViewContent (ver las opciones), Contact (1 vez por sesión), WA_Toque (cada toque),
+   Plan_Visto, Scroll_50/90. El píxel NO se carga en localhost. */
 (function () {
   'use strict';
 
@@ -9,14 +9,12 @@
   var LANDING = 'landing-meta';
 
   var MESSAGES = {
-    general: 'Hola, vi el video de la fotocabina que publican. Estoy organizando una celebración y quería pedir información. ¿Me ayudan?',
-    fotocabina: 'Hola, me interesa la Fotocabina para mi celebración. ¿Me cuentan cómo funciona y cómo veo si tienen mi fecha?',
-    duo: 'Hola, me interesa el Dúo Fiesta, la Fotocabina con una experiencia 360. ¿Me cuentan cómo funciona y cómo veo si tienen mi fecha?',
-    pack: 'Hola, me interesa el Pack Estrella, con Fotocabina, 360 y Selfie Mirror. ¿Me cuentan cómo funciona y cómo veo si tienen mi fecha?',
-    dudas: 'Hola, no sé cuál opción me conviene para mi celebración. ¿Me ayudan a elegir? Les cuento la fecha, el lugar y cuántos invitados somos.',
-    empresa: 'Hola, necesito cotizar una fotocabina para un evento de empresa. ¿Me ayudan?'
+    general: 'Hola, vi el video de la fotocabina y quiero cotizar para mi evento. ¿Me ayudan?',
+    fotocabina: 'Hola, quiero cotizar la Fotocabina para mi evento. ¿Me ayudan con la fecha?',
+    duo: 'Hola, quiero cotizar el Dúo Fiesta (Fotocabina + 360) para mi evento. ¿Me ayudan con la fecha?',
+    pack: 'Hola, quiero cotizar el Pack Estrella (Fotocabina + 360 + Selfie Mirror) para mi evento. ¿Me ayudan con la fecha?'
   };
-  var PLAN_OF = { general: 'general', fotocabina: 'fotocabina', duo: 'duo-fiesta', pack: 'pack-estrella', dudas: 'ayuda', empresa: 'empresa' };
+  var PLAN_OF = { general: 'general', fotocabina: 'fotocabina', duo: 'duo-fiesta', pack: 'pack-estrella' };
 
   var testLog = (window.__landingEvents = []);
   var isLocal = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || /\.localhost$/.test(location.hostname);
@@ -77,10 +75,20 @@
     track('WA_Toque', params);
   });
 
-  /* ---------- Video: respeta "reducir movimiento" ---------- */
-  var video = document.getElementById('hero-video');
-  if (video && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    video.removeAttribute('autoplay'); video.pause();
+  /* ---------- Videos: solo se mueve el que se ve; respeta ahorro de datos y "reducir movimiento" ---------- */
+  var conn = navigator.connection || {};
+  var noMotion = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || conn.saveData === true;
+  var heroVideo = document.getElementById('hero-video');
+  if (heroVideo && noMotion) { heroVideo.removeAttribute('autoplay'); heroVideo.pause(); }
+  var cardVideos = document.querySelectorAll('.card-media video');
+  if (!noMotion && 'IntersectionObserver' in window) {
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); }
+      });
+    }, { threshold: 0.35, rootMargin: '150px 0px' });
+    cardVideos.forEach(function (v) { vio.observe(v); });
   }
 
   /* ---------- Observadores ---------- */
@@ -98,7 +106,7 @@
         onceLocal('plan_' + id, function () { track('Plan_Visto', { plan: id }); });
       });
     }, { threshold: 0.6 });
-    document.querySelectorAll('.plan').forEach(function (p) { planIO.observe(p); });
+    document.querySelectorAll('.card').forEach(function (p) { planIO.observe(p); });
 
     /* barra fija: visible salvo cuando un botón principal ya está en pantalla */
     var sticky = document.getElementById('sticky');
@@ -123,9 +131,4 @@
     if (maxScroll >= 90) onceLocal('s90', function () { track('Scroll_90'); });
   }, { passive: true });
 
-  document.querySelectorAll('details[data-q]').forEach(function (d) {
-    d.addEventListener('toggle', function () {
-      if (d.open) track('FAQ_Abierta', { pregunta: d.getAttribute('data-q') });
-    });
-  });
 })();
