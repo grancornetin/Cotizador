@@ -6,7 +6,8 @@
 <title>Fotocabina en el Maule | Herrera Producciones</title>
 <meta name="description" content="Fotocabina y experiencias 360 para tu matrimonio, cumpleaños o graduación en Talca, San Clemente y el Maule.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#f5f0e8">
+<meta name="theme-color" content="#1b1918">
+<script>document.documentElement.className+=' js'</script>
 <link rel="preload" href="fonts/sora-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/montserrat-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="landing.css">
@@ -23,76 +24,81 @@
 <!-- PANTALLA 1 · PORTADA -->
 <section class="hero" aria-labelledby="t-hero">
   <div class="hero-video">
-    <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="media/hero-poster.webp" width="720" height="1280" aria-hidden="true" tabindex="-1">
+    <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="media/hero-poster.webp" width="720" height="1204" aria-hidden="true" tabindex="-1">
       <source src="media/hero.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="hero-panel">
-    <h1 id="t-hero">Fotocabina para tu evento en el Maule.</h1>
+  <div class="hero-copy">
+    <p class="pill"><span class="dot" aria-hidden="true"></span>Fotocabina · 360 · Selfie Mirror</p>
+    <h1 id="t-hero" aria-label="Que tu evento se recuerde.">
+      <span aria-hidden="true">Que tu</span>
+      <span class="rot" aria-hidden="true"><span class="rot-word">evento</span></span>
+      <span aria-hidden="true">se recuerde.</span>
+    </h1>
     <p class="proof"><strong>+200 eventos</strong> en el Maule · <strong>+3 años</strong> de experiencia</p>
     <a class="btn btn-solid wa" href="https://wa.me/56955347032?text=Hola%2C%20vi%20el%20video%20de%20la%20fotocabina%20y%20quiero%20cotizar%20para%20mi%20evento.%20%C2%BFMe%20ayudan%3F" target="_blank" rel="noopener" data-wa="general" data-origin="hero" data-cta-main>Cotizar por WhatsApp<span class="sr"> (se abre WhatsApp en una pestaña nueva)</span></a>
     <a class="more" href="#opciones" data-origin="ver_opciones">Ver opciones y precios <span aria-hidden="true">↓</span></a>
   </div>
 </section>
 
+<!-- CINTA -->
+<div class="ribbon-wrap"><div class="ribbon" aria-hidden="true">
+  <div class="ribbon-track">
+    <span>Matrimonios</span><i></i><span>Cumpleaños</span><i></i><span>Graduaciones</span><i></i><span>Quinceañeras</span><i></i><span>Aniversarios</span><i></i><span>Empresas</span><i></i>
+    <span>Matrimonios</span><i></i><span>Cumpleaños</span><i></i><span>Graduaciones</span><i></i><span>Quinceañeras</span><i></i><span>Aniversarios</span><i></i><span>Empresas</span><i></i>
+  </div>
+</div></div>
+
 <!-- PANTALLA 2 · ELIGE -->
 <section class="options" id="opciones" aria-labelledby="t-op">
   <div class="wrap">
-    <h2 id="t-op">Elige cómo quieres partir</h2>
-    <p class="sub">Los precios son por 2 horas.</p>
+    <p class="kicker">Elige tu experiencia</p>
+    <h2 id="t-op">¿Cómo quieres que se viva?</h2>
+    <p class="sub">Precios por 2 horas de evento.</p>
 
     <div class="cards">
-      <article class="card" data-plan-id="fotocabina">
+      <article class="card reveal" data-plan-id="fotocabina">
         <div class="card-media">
           <video muted loop playsinline preload="none" poster="../assets/services/pack-estrella/fotocabina.webp" width="720" height="1280" aria-hidden="true" tabindex="-1">
             <source src="../assets/services/pack-estrella/fotocabina.mp4" type="video/mp4">
           </video>
+          <p class="sticker"><span>$160.000</span><small>2 horas</small></p>
         </div>
         <div class="card-info">
-          <div class="card-head">
-            <div>
-              <h3>Fotocabina</h3>
-              <p class="desc">Una tira de fotos para cada invitado</p>
-            </div>
-            <p class="price">$160.000</p>
-          </div>
-          <a class="btn btn-line wa" href="https://wa.me/56955347032?text=Hola%2C%20quiero%20cotizar%20la%20Fotocabina%20para%20mi%20evento.%20%C2%BFMe%20ayudan%20con%20la%20fecha%3F" target="_blank" rel="noopener" data-wa="fotocabina" data-origin="fotocabina">Quiero este<span class="sr"> (Fotocabina; se abre WhatsApp en una pestaña nueva)</span></a>
+          <p class="tag">Lo clásico</p>
+          <h3>Fotocabina</h3>
+          <p class="desc">Una tira de fotos para cada invitado.</p>
+          <a class="btn btn-ivory wa" href="https://wa.me/56955347032?text=Hola%2C%20quiero%20cotizar%20la%20Fotocabina%20para%20mi%20evento.%20%C2%BFMe%20ayudan%20con%20la%20fecha%3F" target="_blank" rel="noopener" data-wa="fotocabina" data-origin="fotocabina">Quiero este<span class="sr"> (Fotocabina; se abre WhatsApp en una pestaña nueva)</span></a>
         </div>
       </article>
 
-      <article class="card" data-plan-id="duo-fiesta">
+      <article class="card reveal" data-plan-id="duo-fiesta">
         <div class="card-media">
           <video muted loop playsinline preload="none" poster="../assets/services/pack-estrella/celebracion-360.webp" width="720" height="1280" aria-hidden="true" tabindex="-1">
             <source src="../assets/services/pack-estrella/celebracion-360-preview.mp4" type="video/mp4">
           </video>
+          <p class="sticker"><span>$250.000</span><small>2 horas</small></p>
         </div>
         <div class="card-info">
-          <div class="card-head">
-            <div>
-              <h3>Dúo Fiesta</h3>
-              <p class="desc">Fotocabina + una experiencia 360</p>
-            </div>
-            <p class="price">$250.000</p>
-          </div>
-          <a class="btn btn-line wa" href="https://wa.me/56955347032?text=Hola%2C%20quiero%20cotizar%20el%20D%C3%BAo%20Fiesta%20(Fotocabina%20%2B%20360)%20para%20mi%20evento.%20%C2%BFMe%20ayudan%20con%20la%20fecha%3F" target="_blank" rel="noopener" data-wa="duo" data-origin="duo">Quiero este<span class="sr"> (Dúo Fiesta; se abre WhatsApp en una pestaña nueva)</span></a>
+          <p class="tag">Para animar</p>
+          <h3>Dúo Fiesta</h3>
+          <p class="desc">Fotocabina + una experiencia 360.</p>
+          <a class="btn btn-ivory wa" href="https://wa.me/56955347032?text=Hola%2C%20quiero%20cotizar%20el%20D%C3%BAo%20Fiesta%20(Fotocabina%20%2B%20360)%20para%20mi%20evento.%20%C2%BFMe%20ayudan%20con%20la%20fecha%3F" target="_blank" rel="noopener" data-wa="duo" data-origin="duo">Quiero este<span class="sr"> (Dúo Fiesta; se abre WhatsApp en una pestaña nueva)</span></a>
         </div>
       </article>
 
-      <article class="card" data-plan-id="pack-estrella">
+      <article class="card reveal" data-plan-id="pack-estrella">
         <div class="card-media">
           <video muted loop playsinline preload="none" poster="../assets/services/pack-estrella/selfie-mirror.webp" width="720" height="1280" aria-hidden="true" tabindex="-1">
             <source src="../assets/services/pack-estrella/selfie-mirror-preview.mp4" type="video/mp4">
           </video>
+          <p class="sticker"><span>$300.000</span><small>2 horas</small></p>
         </div>
         <div class="card-info">
-          <div class="card-head">
-            <div>
-              <h3>Pack Estrella</h3>
-              <p class="desc">Fotocabina + 360 + Selfie Mirror</p>
-            </div>
-            <p class="price">$300.000</p>
-          </div>
-          <a class="btn btn-line wa" href="https://wa.me/56955347032?text=Hola%2C%20quiero%20cotizar%20el%20Pack%20Estrella%20(Fotocabina%20%2B%20360%20%2B%20Selfie%20Mirror)%20para%20mi%20evento.%20%C2%BFMe%20ayudan%20con%20la%20fecha%3F" target="_blank" rel="noopener" data-wa="pack" data-origin="pack">Quiero este<span class="sr"> (Pack Estrella; se abre WhatsApp en una pestaña nueva)</span></a>
+          <p class="tag">Todo en uno</p>
+          <h3>Pack Estrella</h3>
+          <p class="desc">Fotocabina + 360 + Selfie Mirror.</p>
+          <a class="btn btn-ivory wa" href="https://wa.me/56955347032?text=Hola%2C%20quiero%20cotizar%20el%20Pack%20Estrella%20(Fotocabina%20%2B%20360%20%2B%20Selfie%20Mirror)%20para%20mi%20evento.%20%C2%BFMe%20ayudan%20con%20la%20fecha%3F" target="_blank" rel="noopener" data-wa="pack" data-origin="pack">Quiero este<span class="sr"> (Pack Estrella; se abre WhatsApp en una pestaña nueva)</span></a>
         </div>
       </article>
     </div>
@@ -102,9 +108,16 @@
 <!-- PANTALLA 3 · CIERRE -->
 <section class="close" aria-labelledby="t-close">
   <div class="wrap">
-    <h2 id="t-close">Cuéntanos tu fecha y tu lugar.</h2>
-    <p class="deposit">Reservas con un abono de $25.000.</p>
-    <a class="btn btn-solid wa" href="https://wa.me/56955347032?text=Hola%2C%20vi%20el%20video%20de%20la%20fotocabina%20y%20quiero%20cotizar%20para%20mi%20evento.%20%C2%BFMe%20ayudan%3F" target="_blank" rel="noopener" data-wa="general" data-origin="cierre" data-cta-main>Cotizar por WhatsApp<span class="sr"> (se abre WhatsApp en una pestaña nueva)</span></a>
+    <h2 id="t-close">¿Cuándo es tu fiesta?</h2>
+    <p class="lead">Cuéntanos tu fecha y tu lugar. Reservas con un abono de $25.000.</p>
+    <a class="btn btn-ivory2 wa" href="https://wa.me/56955347032?text=Hola%2C%20vi%20el%20video%20de%20la%20fotocabina%20y%20quiero%20cotizar%20para%20mi%20evento.%20%C2%BFMe%20ayudan%3F" target="_blank" rel="noopener" data-wa="general" data-origin="cierre" data-cta-main>Cotizar por WhatsApp<span class="sr"> (se abre WhatsApp en una pestaña nueva)</span></a>
+
+    <div class="polaroids" aria-hidden="true">
+      <figure class="pol p1"><img src="../assets/services/pack-estrella/fotocabina.webp" alt="" loading="lazy" width="320" height="400"></figure>
+      <figure class="pol p2"><img src="../assets/services/pack-estrella/celebracion-360.webp" alt="" loading="lazy" width="320" height="400"></figure>
+      <figure class="pol p3"><img src="../assets/services/pack-estrella/selfie-mirror.webp" alt="" loading="lazy" width="320" height="400"></figure>
+    </div>
+
     <p class="small">Valor final para particulares. Empresas con boleta o factura: + 19 % IVA. Traslado aparte. Necesitamos un espacio de 3 × 3 m y electricidad cerca.</p>
   </div>
 </section>
@@ -112,9 +125,10 @@
 </main>
 
 <footer class="foot">
+  <p class="mega" aria-hidden="true">Herrera<br>Producciones</p>
   <div class="wrap">
     <p class="motto">Experiencias que se viven, se comparten y se recuerdan.</p>
-    <p>Herrera Producciones · Región del Maule. Medimos este anuncio con el Píxel de Meta; aquí no pedimos tus datos.</p>
+    <p class="legal">Herrera Producciones · Región del Maule. Esta página no te pide datos: la conversación pasa por WhatsApp.</p>
   </div>
 </footer>
 
@@ -124,5 +138,6 @@
 
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=2109694313248711&amp;ev=PageView&amp;noscript=1"></noscript>
 <script src="landing.js" defer></script>
+<script src="landing-fx.js" defer></script>
 </body>
 </html>
