@@ -1,156 +1,131 @@
-/* Landing de anuncio Meta · Herrera Producciones
-   - Mide: clic en tipo de evento, opción vista, horas elegidas, toque a WhatsApp.
-   - El píxel NO se carga en localhost, para no ensuciar los datos reales con pruebas. */
+/* Landing Meta v2 · Herrera Producciones
+   Mide: ViewContent (ver la escalera), Contact (1 vez por sesión), WA_Toque (cada toque),
+   Plan_Visto, Scroll_50/90, FAQ_Abierta. El píxel NO se carga en localhost. */
 (function () {
   'use strict';
 
   var WHATSAPP = '56955347032';
-  var META_PIXEL_ID = '2109694313248711';
-  var CAMPAIGN_TAG = 'landing-meta';
+  var PIXEL_ID = '2109694313248711';
+  var LANDING = 'landing-meta';
 
-  var state = { event: null, hours: { fotocabina: 1 } };
+  var MESSAGES = {
+    general: 'Hola, vi el video de la fotocabina que publican. Estoy organizando una celebración y quería pedir información. ¿Me ayudan?',
+    fotocabina: 'Hola, me interesa la Fotocabina para mi celebración. ¿Me cuentan cómo funciona y cómo veo si tienen mi fecha?',
+    duo: 'Hola, me interesa el Dúo Fiesta, la Fotocabina con una experiencia 360. ¿Me cuentan cómo funciona y cómo veo si tienen mi fecha?',
+    pack: 'Hola, me interesa el Pack Estrella, con Fotocabina, 360 y Selfie Mirror. ¿Me cuentan cómo funciona y cómo veo si tienen mi fecha?',
+    dudas: 'Hola, no sé cuál opción me conviene para mi celebración. ¿Me ayudan a elegir? Les cuento la fecha, el lugar y cuántos invitados somos.',
+    empresa: 'Hola, necesito cotizar una fotocabina para un evento de empresa. ¿Me ayudan?'
+  };
+  var PLAN_OF = { general: 'general', fotocabina: 'fotocabina', duo: 'duo-fiesta', pack: 'pack-estrella', dudas: 'ayuda', empresa: 'empresa' };
+
   var testLog = (window.__landingEvents = []);
+  var isLocal = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || /\.localhost$/.test(location.hostname);
 
   /* ---------- Píxel de Meta ---------- */
-  var isLocal = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || /\.localhost$/.test(location.hostname);
-  if (META_PIXEL_ID && !isLocal) {
+  if (PIXEL_ID && !isLocal) {
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
       t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
     }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    window.fbq('init', META_PIXEL_ID);
+    window.fbq('init', PIXEL_ID);
     window.fbq('track', 'PageView');
   }
 
-  /* standard=true usa un evento estándar de Meta; si no, un evento personalizado */
   function track(name, params, standard) {
     params = params || {};
-    params.landing = CAMPAIGN_TAG;
+    params.landing = LANDING;
     testLog.push({ name: name, params: params, standard: !!standard });
-    try { if (window.console && isLocal) console.log('[evento]', name, params); } catch (e) {}
-    try {
-      if (window.fbq) window.fbq(standard ? 'track' : 'trackCustom', name, params);
-    } catch (e) {}
+    try { if (isLocal && window.console) console.log('[evento]', name, params); } catch (e) {}
+    try { if (window.fbq) window.fbq(standard ? 'track' : 'trackCustom', name, params); } catch (e) {}
   }
 
-  /* ---------- Mensajes de WhatsApp ---------- */
-  function hoursLabel(h) { return h === 1 ? '1 hora' : h + ' horas'; }
-
-  function planText(card) {
-    var id = card.getAttribute('data-plan-id');
-    var name = card.getAttribute('data-plan');
-    if (id === 'fotocabina') return 'la Fotocabina de ' + hoursLabel(state.hours.fotocabina);
-    if (id === 'duo-fiesta') return 'el Dúo Fiesta de 2 horas';
-    if (id === 'pack-estrella') return 'el Pack Estrella de 2 horas';
-    return name;
+  /* una vez por sesión, con respaldo en memoria si sessionStorage falla */
+  var memo = {};
+  function once(key, fn) {
+    var k = 'hp_' + key, done = false;
+    try { done = sessionStorage.getItem(k) === '1'; } catch (e) { done = !!memo[k]; }
+    if (done) return;
+    try { sessionStorage.setItem(k, '1'); } catch (e) { memo[k] = true; }
+    fn();
   }
+  var local = {};
+  function onceLocal(key, fn) { if (local[key]) return; local[key] = true; fn(); }
 
-  function buildMessage(kind, card) {
-    var forPhrases = {
-      'matrimonio': ' para un matrimonio',
-      'cumpleaños o fiesta familiar': ' para un cumpleaños o fiesta familiar',
-      'graduación': ' para una graduación',
-      'evento de empresa': ' para un evento de empresa'
-    };
-    var forWhat = forPhrases[state.event] || '';
-    var head;
-    if (kind === 'plan' && card) {
-      head = '¡Hola! Vi su anuncio y me interesa ' + planText(card) + forWhat + '.';
-    } else if (kind === 'help') {
-      head = '¡Hola! Vi su anuncio y quisiera que me recomienden qué opción me conviene' + forWhat + '.';
-    } else {
-      head = '¡Hola! Vi su anuncio y quisiera consultar por sus servicios' + forWhat + '.';
-    }
-    return head + '\n\nFecha del evento:\nLugar (comuna o recinto):\n\n¿Tienen disponibilidad?';
+  /* ---------- Enlaces de WhatsApp ---------- */
+  function waUrl(kind) {
+    return 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(MESSAGES[kind] || MESSAGES.general);
   }
-
-  function waUrl(kind, card) {
-    return 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(buildMessage(kind, card));
-  }
-
-  function refreshLinks() {
-    document.querySelectorAll('[data-wa]').forEach(function (a) {
-      var kind = a.getAttribute('data-wa');
-      var card = a.closest('.card');
-      a.href = waUrl(kind, card);
-      a.target = '_blank';
-      a.rel = 'noopener';
-    });
-  }
-
-  /* ---------- Selector "¿Qué celebras?" ---------- */
-  var replies = {
-    'matrimonio': 'Felicidades. Mira las opciones para tu matrimonio.',
-    'cumpleaños o fiesta familiar': 'Qué buena razón para juntarse. Mira las opciones para tu fiesta.',
-    'graduación': 'Una fecha para recordar. Mira las opciones para tu graduación.',
-    'evento de empresa': 'Para boleta o factura se agrega 19 % de IVA. Mira las opciones.'
-  };
-  document.querySelectorAll('.chip').forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      document.querySelectorAll('.chip').forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
-      chip.setAttribute('aria-pressed', 'true');
-      state.event = chip.getAttribute('data-event');
-      document.getElementById('chooser-reply').textContent = replies[state.event] || '';
-      refreshLinks();
-      track('EventoElegido', { evento: state.event });
-    });
+  document.querySelectorAll('[data-wa]').forEach(function (a) {
+    a.href = waUrl(a.getAttribute('data-wa'));
+    a.target = '_blank';
+    a.rel = 'noopener';
   });
 
-  /* ---------- Horas de Fotocabina ---------- */
-  var hourHints = { 1: 'Por $40.000 más tienes 2 horas.', 2: 'Dos horas: más tiempo para que pase todo el mundo.' };
-  document.querySelectorAll('.hour').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var card = btn.closest('.card');
-      card.querySelectorAll('.hour').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
-      btn.setAttribute('aria-pressed', 'true');
-      var h = parseInt(btn.getAttribute('data-hours'), 10);
-      state.hours.fotocabina = h;
-      card.querySelector('.price-value').textContent = btn.getAttribute('data-price');
-      card.querySelector('.price-hint').textContent = hourHints[h];
-      refreshLinks();
-      track('HorasElegidas', { plan: 'fotocabina', horas: h });
-    });
-  });
+  var maxScroll = 0;
+  function scrollPct() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    return h > 0 ? Math.round((window.pageYOffset / h) * 100) : 0;
+  }
 
-  /* ---------- Clics ---------- */
   document.addEventListener('click', function (ev) {
-    var a = ev.target.closest('a');
+    var a = ev.target.closest && ev.target.closest('a[data-wa]');
     if (!a) return;
-    if (a.hasAttribute('data-wa')) {
-      var card = a.closest('.card');
-      var kind = a.getAttribute('data-wa');
-      var params = { origen: kind, evento: state.event || 'sin_elegir' };
-      if (card) { params.plan = card.getAttribute('data-plan-id'); if (params.plan === 'fotocabina') params.horas = state.hours.fotocabina; }
-      track('Contact', params, true); /* evento estándar: toque a WhatsApp */
-    } else if (a.getAttribute('data-track') === 'detail_click') {
-      track('FichaAbierta', { plan: a.getAttribute('data-plan-id') });
-    } else if (a.getAttribute('data-track') === 'see_options') {
-      track('VerOpciones', { evento: state.event || 'sin_elegir' });
-    }
+    var kind = a.getAttribute('data-wa');
+    var params = { origen: a.getAttribute('data-origin') || kind, plan: PLAN_OF[kind] || kind, scroll: Math.max(maxScroll, scrollPct()) };
+    once('contact', function () { track('Contact', params, true); });
+    track('WA_Toque', params);
   });
 
-  /* ---------- Opción vista (cuando una tarjeta ocupa la pantalla) ---------- */
+  /* ---------- Video: respeta "reducir movimiento" ---------- */
+  var video = document.getElementById('hero-video');
+  if (video && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    video.removeAttribute('autoplay'); video.pause();
+  }
+
+  /* ---------- Observadores ---------- */
   if ('IntersectionObserver' in window) {
-    var seen = {};
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        var id = en.target.getAttribute('data-plan-id');
-        if (seen[id]) return;
-        seen[id] = true;
-        track('OpcionVista', { plan: id });
+    var opciones = document.getElementById('opciones');
+    if (opciones) {
+      new IntersectionObserver(function (en, ob) {
+        if (en[0].isIntersecting) { once('viewcontent', function () { track('ViewContent', { content_name: 'Escalera de opciones', content_category: 'fotocabina' }, true); }); ob.disconnect(); }
+      }, { threshold: 0.2 }).observe(opciones);
+    }
+    var planIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var id = e.target.getAttribute('data-plan-id');
+        onceLocal('plan_' + id, function () { track('Plan_Visto', { plan: id }); });
       });
     }, { threshold: 0.6 });
-    document.querySelectorAll('.card').forEach(function (c) { io.observe(c); });
+    document.querySelectorAll('.plan').forEach(function (p) { planIO.observe(p); });
+
+    /* barra fija: visible salvo cuando un botón principal ya está en pantalla */
+    var sticky = document.getElementById('sticky');
+    var visibleMain = [];
+    function refreshSticky() { if (sticky) sticky.hidden = visibleMain.length > 0; }
+    var mainIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var i = visibleMain.indexOf(e.target);
+        if (e.isIntersecting && i < 0) visibleMain.push(e.target);
+        if (!e.isIntersecting && i >= 0) visibleMain.splice(i, 1);
+      });
+      refreshSticky();
+    }, { threshold: 0.6 });
+    document.querySelectorAll('[data-cta-main]').forEach(function (b) { mainIO.observe(b); });
+  } else {
+    var s = document.getElementById('sticky'); if (s) s.hidden = false;
   }
 
-  /* ---------- Barra fija móvil: aparece al pasar la portada ---------- */
-  var sticky = document.getElementById('sticky');
-  var hero = document.querySelector('.hero');
-  if (sticky && hero && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (e) { sticky.hidden = e[0].isIntersecting; }, { threshold: 0 }).observe(hero);
-  }
+  window.addEventListener('scroll', function () {
+    var p = scrollPct(); if (p > maxScroll) maxScroll = p;
+    if (maxScroll >= 50) onceLocal('s50', function () { track('Scroll_50'); });
+    if (maxScroll >= 90) onceLocal('s90', function () { track('Scroll_90'); });
+  }, { passive: true });
 
-  refreshLinks();
+  document.querySelectorAll('details[data-q]').forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (d.open) track('FAQ_Abierta', { pregunta: d.getAttribute('data-q') });
+    });
+  });
 })();
