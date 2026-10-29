@@ -1,0 +1,30 @@
+<section class="inquiry-section" id="consulta" aria-labelledby="inquiry-title">
+  <div class="wrap inquiry-layout">
+    <div>
+      <h2 id="inquiry-title">Hablemos<br>de tu fecha.</h2>
+      <p>Escríbenos y revisamos juntos tu fecha, el lugar y los detalles.</p>
+      <p class="inquiry-selection" id="inquiry-selection">{{inquiry.selection}}</p>
+      <p class="prior-quote">Si ya tienes una cotización, compártela al conversar.</p>
+    </div>
+    <div class="inquiry-card">
+      <form id="inquiry-form" novalidate>
+        <p class="form-intro">Podemos comenzar con lo que ya elegiste.</p>
+        <details class="inquiry-details" hidden>
+          <summary>Añadir fecha y lugar <span>(opcional)</span></summary>
+          <div class="inquiry-fields">
+            <div class="date-time">
+              <label for="event-date">Fecha de tu celebración<input type="date" id="event-date" name="date" aria-describedby="date-help"><small id="date-help">Incluye el año.</small></label>
+              <label for="event-time">Hora de inicio<input type="time" id="event-time" name="time"></label>
+            </div>
+            <label for="event-location">¿Dónde será?<input type="text" id="event-location" name="location" placeholder="Comuna o nombre del recinto" maxlength="180" autocomplete="off"></label>
+            <label for="event-occasion">¿Qué celebras?<input type="text" id="event-occasion" name="occasion" placeholder="Matrimonio, cumpleaños, encuentro…" maxlength="120" autocomplete="off"></label>
+          </div>
+        </details>
+        <p class="form-error" id="inquiry-error" role="alert" hidden></p>
+        <button class="button primary" type="submit" id="inquiry-submit" hidden>Conversar por WhatsApp <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+      </form>
+      <a class="button primary" id="inquiry-fallback" href="{{fallbackUrl}}">Conversar por WhatsApp <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+      <p class="privacy-note">Podrás revisar el mensaje en WhatsApp antes de enviarlo.</p>
+    </div>
+  </div>
+</section>

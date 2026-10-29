@@ -1,0 +1,93 @@
+/* Native fieldsets and date/time controls must shrink with the editor grid. */
+.editor fieldset,
+.editor .grid {
+  min-width: 0;
+  min-inline-size: 0;
+  max-width: 100%;
+}
+
+.editor input[type="date"],
+.editor input[type="time"] {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  min-height: 48px;
+}
+
+/* Keep Safari's native picker and give its value room without clipping focus. */
+.editor input::-webkit-date-and-time-value {
+  min-width: 0;
+  max-width: 100%;
+  min-height: 1.5em;
+  text-align: left;
+}
+
+.editor input::-webkit-datetime-edit {
+  min-width: 0;
+  padding: 0;
+}
+
+.selection-sheet fieldset {
+  min-width: 0;
+}
+
+.selection-sheet input[type="radio"] {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.selection-sheet label > span {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  /* Override the modal dialog's UA max-width so the sheet reaches both edges. */
+  .selection-sheet {
+    box-sizing: border-box;
+    width: 100vw;
+    max-width: none;
+    min-width: 0;
+    inset-inline: 0;
+    margin: auto 0 0;
+    padding: 26px max(22px, env(safe-area-inset-right, 0px))
+      calc(22px + env(safe-area-inset-bottom, 0px))
+      max(22px, env(safe-area-inset-left, 0px));
+    overscroll-behavior: contain;
+  }
+
+  .selection-sheet label,
+  .selection-sheet button,
+  .editor button,
+  .preview .actions > button {
+    min-height: 44px;
+    font-size: 14px;
+  }
+
+  #chooseRate {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .editor summary {
+    min-height: 44px;
+    padding-block: 12px;
+    font-size: 14px;
+  }
+}
+
+@media (any-pointer: coarse) {
+  .editor input,
+  .editor select,
+  .editor textarea {
+    font-size: 16px;
+  }
+}

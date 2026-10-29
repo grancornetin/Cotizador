@@ -1,0 +1,57 @@
+.workspace-notice{grid-column:1/-1}
+.catalog-workspace{grid-column:1/-1;min-width:0;background:var(--cream);padding:32px;border-radius:16px}
+.catalog-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,260px) auto;align-items:center;gap:24px;margin-bottom:28px}
+.catalog-heading h1{margin:0 0 10px;font-size:32px;letter-spacing:-.03em}
+.catalog-heading p{margin:0;line-height:1.6;color:#625b51;max-width:65ch}
+.catalog-heading>*{min-width:0}
+.catalog-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
+.catalog-workspace.is-editing .catalog-layout{grid-template-columns:minmax(0,1fr) minmax(360px,420px)}
+.catalog-filters{display:grid;grid-template-columns:minmax(0,2fr) minmax(130px,1fr) minmax(130px,1fr);gap:12px}
+.catalog-workspace.is-editing .catalog-filters{grid-template-columns:1fr 1fr}
+.catalog-workspace.is-editing .catalog-filters>label:first-child{grid-column:1/-1}
+.catalog-results{font-size:13px;line-height:1.6;color:#625b51;margin:18px 0}
+.catalog-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,235px),1fr));gap:16px}
+.catalog-grid>li{min-width:0;display:flex}
+.catalog-card{display:flex;flex-direction:column;width:100%;padding:22px;background:#fffdf8;border:1px solid var(--border);border-radius:14px;transition:border-color 160ms ease-out,background-color 160ms ease-out}
+.catalog-card:focus-within{border-color:var(--ink)}
+.catalog-card-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:12px;line-height:1.5;color:#625b51;margin-bottom:18px}
+.catalog-availability{font-weight:600}
+.catalog-card h2{font-size:18px;line-height:1.5;letter-spacing:-.02em;margin:0 0 12px;overflow-wrap:anywhere}
+.catalog-card-price{font-weight:600;font-size:14px;line-height:1.7;margin:0 0 10px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.catalog-card-description{color:#625b51;font-size:13px;line-height:1.65;margin:0 0 22px;overflow-wrap:anywhere;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.catalog-card-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:4px}
+.catalog-card-actions button{flex:1;padding:12px 14px;font-size:12px}
+.catalog-card-actions [aria-expanded=true]{background:var(--gold);color:var(--ink)}
+.catalog-empty{padding:48px 24px;text-align:center;border:1px dashed var(--border);border-radius:14px}
+.catalog-empty h2{font-size:22px;margin:0 0 12px}
+.catalog-empty p{max-width:50ch;margin:0 auto 24px;line-height:1.7;color:#625b51}
+.catalog-admin{min-width:0;background:#fffdf8;border:1px solid var(--border);border-radius:14px;padding:24px;margin:0;animation:catalog-panel-in 200ms cubic-bezier(.16,1,.3,1)}
+.catalog-editor-heading{display:flex;flex-direction:column;align-items:start;gap:14px;margin-bottom:24px}
+.catalog-editor-heading h2{font-size:22px;letter-spacing:-.02em;line-height:1.4;margin:0}
+.catalog-admin .grid{grid-template-columns:minmax(0,1fr);gap:18px;margin:0 0 24px}
+.catalog-admin .rate-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.catalog-admin .rate-row.has-hours{grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr)}
+.catalog-admin .rate-row button{grid-column:1/-1;justify-self:start;font-size:12px}
+.catalog-admin .rate-row input,.catalog-admin .rate-row select{font-size:16px;padding:12px 8px}
+.catalog-admin details{margin-top:24px}
+.catalog-admin .configuration-row button{margin-right:0}
+.catalog-admin .option-row{flex-wrap:wrap}
+.catalog-editor-actions{display:flex;flex-wrap:wrap;gap:10px;padding-top:18px;border-top:1px solid var(--border)}
+.catalog-editor-actions button{flex:1 1 150px}
+.catalog-transfer{margin-top:32px}
+.catalog-pagination{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:24px;font-size:13px;font-variant-numeric:tabular-nums}
+.catalog-transfer .import{max-width:100%;gap:10px;padding:12px 0}
+.catalog-transfer input{max-width:100%}
+#catalogNotice,#catalogMessage{overflow-wrap:anywhere;line-height:1.7;font-size:13px}
+#catalogNotice:empty{display:none}
+.catalog-workspace input,.catalog-workspace textarea{caret-color:var(--ink)}
+.catalog-workspace :focus-visible{outline:3px solid #80652f;outline-offset:3px}
+.catalog-workspace h1:focus{outline:none}
+.catalog-workspace button{transition:background-color 160ms ease-out,color 160ms ease-out,transform 100ms ease-out;touch-action:manipulation}
+.catalog-workspace button:active{transform:translateY(1px)}
+.catalog-workspace{scrollbar-color:#b5a993 var(--cream);scrollbar-width:thin}
+@keyframes catalog-panel-in{from{opacity:.8;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(hover:hover) and (pointer:fine){.catalog-card:hover{border-color:#9f9179;background:#fff}.catalog-workspace button:hover{filter:none;background:#37322a;color:#fffdf8}.catalog-workspace .quiet:hover{background:#ded4c2;color:var(--ink)}}
+@media(max-width:1000px) and (min-width:761px){.catalog-workspace.is-editing .catalog-layout{grid-template-columns:minmax(0,1fr) minmax(320px,360px)}.catalog-workspace{padding:24px}.catalog-card{padding:18px}}
+@media(max-width:760px){.catalog-workspace{padding:24px 16px}.catalog-heading{grid-template-columns:minmax(0,1fr) auto;gap:16px 12px;margin-bottom:24px}.catalog-heading>div{display:contents}.catalog-heading h1{font-size:28px;margin:0;grid-column:1;grid-row:1}.catalog-heading p{grid-column:1/-1;grid-row:2;font-size:13px}.catalog-heading>button{grid-column:2;grid-row:1;padding-inline:14px}.catalog-heading>label{grid-column:1/-1;grid-row:3}.catalog-filters{grid-template-columns:1fr 1fr}.catalog-filters>label:first-child{grid-column:1/-1}.catalog-workspace.is-editing .catalog-layout{grid-template-columns:minmax(0,1fr)}.catalog-workspace.is-editing .catalog-browser,.catalog-workspace.is-editing .catalog-heading,.catalog-workspace.is-editing .catalog-transfer{display:none}.catalog-admin{padding:20px 16px}.catalog-workspace.is-editing{padding:0;background:transparent}.catalog-editor-actions{position:sticky;bottom:0;background:#fffdf8;padding-block:14px calc(14px + env(safe-area-inset-bottom))}.catalog-editor-actions button{flex-basis:100%}.catalog-transfer .import{display:flex}.catalog-grid{grid-template-columns:minmax(0,1fr)}.catalog-card{padding:22px}.catalog-empty{padding:32px 16px}}
+@media(prefers-reduced-motion:reduce){.catalog-admin{animation:none}.catalog-workspace button,.catalog-card{transition:none}.catalog-workspace button:active{transform:none}}

@@ -1,0 +1,24 @@
+/* Dos experiencias en el mundo público Herrera. */
+.duo-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);column-gap:64px;row-gap:0;padding-block:40px 72px}
+.duo-hero .hero-title{grid-column:1;margin-bottom:24px}
+.duo-hero .hero-statement{grid-column:1;font-size:clamp(40px,4.8vw,68px);line-height:1.15;max-width:10em}
+.duo-hero .hero-intro{grid-column:1;display:flex;flex-direction:column;align-items:flex-start;gap:18px;margin:28px 0 0}
+.duo-hero .hero-intro>p:first-child{font-size:17px;max-width:40ch}
+.duo-hero .hero-experiences{grid-column:2;grid-row:1/4;align-self:center;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.duo-hero .hero-experiences>a,.duo-hero .hero-experiences>a:first-child,.duo-hero .hero-experiences>a:last-child{padding:0}
+.duo-hero .hero-preview-frame{height:auto;aspect-ratio:9/16;margin-bottom:14px}
+.duo-hero .hero-experiences .experience-word{font-size:28px}
+.duo-hero .hero-preview-controls{grid-column:2;margin-top:12px}
+@media(max-width:1000px){.duo-hero{column-gap:36px}.duo-hero .hero-experiences{gap:14px}.duo-hero .hero-experiences .experience-word{font-size:24px}}
+@media(max-width:700px){
+  .duo-hero{display:block;padding-block:24px 48px}
+  .duo-hero .hero-title{margin-bottom:20px}
+  .duo-hero .hero-title h1{font-size:clamp(32px,9vw,40px)}
+  .duo-hero .hero-statement{font-size:clamp(36px,10vw,42px);line-height:1.14}
+  .duo-hero .hero-intro{margin-top:20px;gap:16px;align-items:stretch}
+  .duo-hero .hero-intro>p:first-child{font-size:15px;max-width:44ch}
+  .duo-hero .hero-price{margin:0;display:block}
+  .duo-hero .hero-experiences{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:30px}
+  .duo-hero .hero-experiences .experience-word{font-size:24px}
+  .duo-hero .hero-preview-controls{margin-top:12px}
+}

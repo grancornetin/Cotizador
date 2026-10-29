@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#F5F0E8">
+  <meta name="color-scheme" content="light">
+  <title>Fotocabina para tu celebración | Herrera Producciones</title>
+  <meta name="description" content="Fotocabina con tiras personalizadas e impresiones durante el tiempo contratado. {{price.1}} más traslado. Valor final para particulares. Empresas con boleta o factura: + 19 % IVA. en el Maule. Consulta tu fecha.">
+  <meta property="og:title" content="Fotocabina · La fiesta se vive. La foto se lleva.">
+  <meta property="og:description" content="Fotocabina desde {{price.1}} más traslado. Valor final para particulares. Empresas con boleta o factura: + 19 % IVA. Tiras personalizadas para llevarse un recuerdo de tu celebración. Herrera Producciones.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:url" content="https://cotizador-grancornetin.vercel.app/servicios/fotocabina/">
+  <meta property="og:image" content="https://cotizador-grancornetin.vercel.app/assets/services/pack-estrella/fotocabina.webp">
+  <meta property="og:image:alt" content="Una sesión real de Fotocabina con invitados y cotillón.">
+  <link rel="canonical" href="https://cotizador-grancornetin.vercel.app/servicios/fotocabina/">
+  <link rel="icon" href="../../assets/icons/app.svg" type="image/svg+xml">
+  <link rel="preload" href="../../assets/fonts/sora-600.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../../src/styles/service-page.css">
+  <link rel="stylesheet" href="../../src/styles/fotocabina.css">
+  <script type="module" src="../../src/services/page.js"></script>
+</head>
+<body data-service="fotocabina">
+  <a class="skip" href="#contenido">Ir al contenido</a>
+  <header class="site-header wrap"><a href="#titulo" class="brand" aria-label="Herrera Producciones, inicio de Fotocabina"><img src="../../assets/branding/logo.png" alt="Herrera Producciones" width="2388" height="728"></a><nav aria-label="Navegación de la página"><a href="#tu-servicio">Opciones</a><a class="header-contact" href="#consulta">Tu fecha <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></nav></header>
+  <main id="contenido">
+    <noscript><p class="wrap no-script">Fotocabina: 1 hora {{price.1}}, 2 horas {{price.2}} o 3 horas {{price.3}}, más traslado. Para personalizar aquí, activa JavaScript; también puedes consultar directamente por WhatsApp.</p></noscript>
+    <section class="cabina-hero wrap" aria-labelledby="titulo">
+      <h1 id="titulo">Fotocabina<span aria-hidden="true">.</span></h1>
+      <div class="cabina-hero-scene">
+        <h2 class="hero-statement">{{hero.title}}</h2>
+        <figure class="cabina-window"><span class="hero-preview-frame" data-preview="../../assets/services/pack-estrella/fotocabina-preview.mp4"><img src="../../assets/services/pack-estrella/fotocabina.webp" alt="Invitados posando con cotillón durante una sesión de Fotocabina." width="720" height="1280" decoding="async" fetchpriority="high"></span><figcaption>Una sesión real, en cámara rápida.</figcaption><div class="hero-preview-controls"><button type="button" data-preview-toggle hidden>Pausar vistas previas</button></div></figure>
+        <p class="cabina-lead">Entran juntos, se ríen, posan. Y se llevan una tira de fotos personalizada para recordar tu celebración.</p>
+        <div class="cabina-hero-action"><a class="button primary" data-hero-action href="#consulta">Consultar mi fecha <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><p class="cabina-price"><strong>{{price.1}}</strong> <span>Valor final para particulares. Empresas con boleta o factura: + 19 % IVA · 1 hora · más traslado</span></p></div>
+      </div>
+    </section>
+    <section class="experience-section cabina-story" id="experiencia" aria-labelledby="experience-title"><div class="wrap">
+      <div class="section-heading"><h2 id="experience-title">Una foto juntos.<br>Un recuerdo para cada uno.</h2><p>Tiras personalizadas e impresiones durante el servicio. Para el recuerdo que se llevan, y el que compartieron.</p></div>
+      <div class="experience-panel">
+        <div class="experience-visual"><h3 class="media-heading">La sesión y el ambiente</h3><div class="experience-media" data-media-slot="cabina" aria-label="Vídeos de Fotocabina: sesión y montaje"></div></div>
+        <div class="experience-detail"><h3>Esto incluye tu Fotocabina</h3><ul class="included">{{included}}</ul><p class="cabina-space">Cuéntanos dónde celebrarás: revisamos el espacio y el montaje contigo.</p><a class="cabina-story-link" href="#tu-servicio">Elegir duración y extras <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+      </div>
+    </div></section>
+
+    <section class="configure wrap" id="tu-servicio" aria-labelledby="configure-title">
+      <div class="configure-copy"><h2 id="configure-title">Tu celebración.<br>Tu Fotocabina.</h2><p>Elige cómo lo quieres. Nosotros revisamos contigo la fecha, el lugar y los detalles.</p><div class="duration-explainer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><p><strong>2, 3 o 4 horas de Fotocabina.</strong> Las impresiones se realizan durante el tiempo contratado.</p></div></div>
+      <form id="pack-form" class="pack-form">
+        <fieldset><legend>¿Cuánto tiempo de diversión?</legend><div class="duration-options">{{durations}}</div></fieldset>
+        <fieldset class="extras"><legend>Un recuerdo más, si quieres</legend>{{options}}</fieldset>
+        <details class="optional-media"><summary>Ver el álbum opcional</summary><div data-media-slot="album"></div></details><details class="optional-media pendrive-media"><summary>Ver referencia del pendrive</summary><figure class="pendrive-reference"><img src="../../assets/services/pack-estrella/pendrive-personalizado.webp" alt="Imagen de referencia de un pendrive con grabado personalizado." width="960" height="960" loading="lazy" decoding="async"><figcaption>Imagen de referencia. El grabado se personaliza para tu celebración.</figcaption></figure></details><div class="price-summary"><div><span>Tu selección</span><output id="pack-total" aria-live="polite" aria-atomic="true">{{price.1}}</output></div><p>Valor final para particulares. Empresas con boleta o factura: + 19 % IVA · <strong>más traslado</strong></p><p class="field-help">El traslado depende del lugar. El total final queda en tu cotización.</p></div>
+      </form>
+    </section>
+    {{inquiry}}
+<section class="faq-section wrap" id="dudas" aria-labelledby="faq-title"><div><h2 id="faq-title">Todo claro,<br>antes de celebrar.</h2><p>Lo que conviene saber sobre tu Fotocabina.</p></div><div class="faqs">{{faq}}</div></section>
+<section class="cabina-combine wrap" aria-labelledby="combine-title"><div><h2 id="combine-title">¿También quieres<br>el recuerdo en vídeo?</h2><p>Pack Estrella combina Fotocabina, una experiencia 360 y Selfie Mirror. Explora el pack si quieres reunir las tres experiencias.</p></div><a class="button primary" href="../pack-estrella/">Ver Pack Estrella <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></section>
+    <section class="closing wrap"><p>Que no se quede<br><strong>solo en el teléfono.</strong></p><a href="#consulta" class="button primary">Conversemos de tu fecha <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></section>
+  </main>
+  <footer class="site-footer wrap"><img src="../../assets/branding/logo.png" alt="Herrera Producciones" width="2388" height="728"><p>Talca · San Clemente · Región del Maule</p><a href="https://wa.me/{{contact.whatsapp}}">{{contact.phone}}</a><a href="#titulo">Volver al inicio <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></a></footer>
+  <aside class="mobile-consult" aria-label="Consultar Fotocabina"><div><strong id="sticky-total">{{price.1}}</strong><span id="sticky-pending">Valor final para particulares. Empresas con boleta o factura: + 19 % IVA · + traslado</span></div><a href="#consulta" class="button primary">Consultar fecha <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></aside>
+</body>
+</html>

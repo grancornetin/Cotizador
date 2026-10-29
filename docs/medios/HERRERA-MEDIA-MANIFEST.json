@@ -1,0 +1,545 @@
+{
+  "schemaVersion": 1,
+  "activity": "ACT-147",
+  "sourceFiles": 42,
+  "sourceBytes": 834226072,
+  "originalsStored": "Private owner folder, excluded from Git and deployment",
+  "selection": [
+    {
+      "sourceId": "M12",
+      "sourceSha256": "85d11f7bb0a2bd9b7c5648f24f3397604557298dbb7b9f2b90f19f554a7ef3f0",
+      "originalBytes": 9754702,
+      "hdrToSdr": false,
+      "posterTime": 2.083,
+      "exports": [
+        {
+          "path": "assets/services/pack-estrella/fotocabina.mp4",
+          "bytes": 1355435,
+          "sha256": "d50d0e8c4a465245656f68553259a37c5c442c218c980ae46c4f69fdb9f6f34f"
+        },
+        {
+          "path": "assets/services/pack-estrella/fotocabina.webp",
+          "bytes": 48722,
+          "sha256": "f54d14b2db7847a5fd6a2abe8f0f09ceb00b531c1547e5646baab5c7d1ade006"
+        }
+      ],
+      "audio": false
+    },
+    {
+      "sourceId": "M24",
+      "sourceSha256": "fcadf39c8fbb15ac5fb8d5e949c797c847175c94cf57a3ebb85e15712895491d",
+      "originalBytes": 19482328,
+      "hdrToSdr": false,
+      "posterTime": 5.17,
+      "exports": [
+        {
+          "path": "assets/services/pack-estrella/plataforma-360.mp4",
+          "bytes": 3055951,
+          "sha256": "a4b5d8a3798d2076427a968779335222d29b432f7fa6e84326d86766a7780955"
+        },
+        {
+          "path": "assets/services/pack-estrella/plataforma-360.webp",
+          "bytes": 41022,
+          "sha256": "4beb1c5b98487884eff8eea77e1c766df3ca51e800a3da4a05e74f4ab620d806"
+        }
+      ],
+      "audio": false
+    },
+    {
+      "sourceId": "M01",
+      "sourceSha256": "8dc0d387f555139397a6963ca4baaa8a7431da1a28af880b1de87adeea1faa92",
+      "originalBytes": 10825530,
+      "hdrToSdr": false,
+      "posterTime": 4.759,
+      "exports": [
+        {
+          "path": "assets/services/pack-estrella/aero360.mp4",
+          "bytes": 1810623,
+          "sha256": "16c9e6658f33a311019f3a5c928a17c17963d671a1e4c59ff4ac7ea1ba17ffbe"
+        },
+        {
+          "path": "assets/services/pack-estrella/aero360.webp",
+          "bytes": 77324,
+          "sha256": "ff64ce9e4457b295c3daa0d53f075d2798d3869548f60e717de34a6a145b53fe"
+        }
+      ],
+      "audio": false
+    },
+    {
+      "sourceId": "M36",
+      "sourceSha256": "d8cde4e07021d38db3f55728bf2c2bc82d8a92695729628627f285a30681bb46",
+      "originalBytes": 6566948,
+      "hdrToSdr": false,
+      "posterTime": 2.885,
+      "exports": [
+        {
+          "path": "assets/services/pack-estrella/selfie-mirror.mp4",
+          "bytes": 5111693,
+          "sha256": "7e5475f89c2b42544dbebf6ea95d6e4c7b79823803f66ad9b17ef9344208dc67"
+        },
+        {
+          "path": "assets/services/pack-estrella/selfie-mirror.webp",
+          "bytes": 98332,
+          "sha256": "a67cb22ff56125b82255c250c212603c98c327de8def3711e98decffc1c4a772"
+        }
+      ],
+      "audio": false
+    },
+    {
+      "sourceId": "M05",
+      "sourceSha256": "664128b6390b9515729ee64ac233459a4658f525725956cc58d0f2d707fe07c2",
+      "originalBytes": 13463447,
+      "hdrToSdr": false,
+      "posterTime": 3.486,
+      "exports": [
+        {
+          "path": "assets/services/pack-estrella/album-opcional.mp4",
+          "bytes": 1260536,
+          "sha256": "719b94ac454d330c5f8299b4d95eddf2ab685ef3bae70927813b4a47bb16ac8c"
+        },
+        {
+          "path": "assets/services/pack-estrella/album-opcional.webp",
+          "bytes": 74384,
+          "sha256": "c6f7a38a80e747150f40420ea47b125df66ee94f7092b6a66e310c9c81e77733"
+        }
+      ],
+      "audio": false
+    },
+    {
+      "sourceId": "M23",
+      "sourceSha256": "fcc2c9808afdc91ec914689efbe7675d64e5d3910e704a9d7513bd6687007fcc",
+      "originalBytes": 26069497,
+      "hdrToSdr": false,
+      "posterTime": 6.242,
+      "exports": [
+        {
+          "path": "assets/services/pack-estrella/celebracion-360.mp4",
+          "bytes": 2327459,
+          "sha256": "8630dd8f4a7f33bd103bf378c8f7a120989b471a1caaa6c92a5b766d8cb47dd7"
+        },
+        {
+          "path": "assets/services/pack-estrella/celebracion-360.webp",
+          "bytes": 68028,
+          "sha256": "8552747bfd162fa362e362895229211497b1dc62ba601e57c1b23064b74c1cb1"
+        }
+      ],
+      "audio": false
+    },
+    {
+      "sourceId": "M20",
+      "sourceSha256": "6261c26bd6677beccab77644c0756667ba2bb483a113f8d0b48c7f20f5eea52c",
+      "originalBytes": 2988961,
+      "hdrToSdr": false,
+      "posterTime": null,
+      "exports": [
+        {
+          "path": "assets/services/pack-estrella/montaje-plataforma-360.webp",
+          "bytes": 510982,
+          "sha256": "ade8f0dcd189077c439743467ced08a2117179dedde3ff6442996e55a30485bd"
+        }
+      ]
+    },
+    {
+      "sourceId": "M15",
+      "sourceSha256": "5a67afb10fac35397fdd4349783bde9ef3818b7ed64ab4879a103a889b9aa6ae",
+      "originalBytes": 25792036,
+      "hdrToSdr": false,
+      "posterTime": 3,
+      "clipStartSeconds": 11,
+      "clipDurationSeconds": 6.798,
+      "exports": [
+        {
+          "path": "assets/services/pack-estrella/fotocabina-exterior.mp4",
+          "bytes": 970540,
+          "sha256": "c89ac2fbed81755ffe2a58f1ea32acff8fbcc8b0d3c1e6cd802c828549c55b3b"
+        },
+        {
+          "path": "assets/services/pack-estrella/fotocabina-exterior.webp",
+          "bytes": 94594,
+          "sha256": "c309ec0faadfac926b5995f8b7c6b1058a262650790491c83c5f44df6813d4f3"
+        }
+      ],
+      "audio": false
+    },
+    {
+      "sourceId": "M33",
+      "sourceSha256": "5fa22fca1d54c282639ebcb8b047e48cf650986f150bc7dec1fe2657d4cf9366",
+      "originalBytes": 109031526,
+      "hdrToSdr": true,
+      "posterTime": 2,
+      "clipStartSeconds": 0,
+      "clipDurationSeconds": 8,
+      "exports": [
+        {
+          "path": "assets/services/pack-estrella/selfie-mirror-detalles.mp4",
+          "bytes": 1941542,
+          "sha256": "db83e0652641ad8a511583ceaa76c27a90eb1da45986620c5e0f10db2a00cfd4"
+        },
+        {
+          "path": "assets/services/pack-estrella/selfie-mirror-detalles.webp",
+          "bytes": 185804,
+          "sha256": "f769f926173021a96c3205067b5eb6e174516f1d8a3591169f01216f1941b0a3"
+        }
+      ],
+      "audio": false
+    },
+    {
+      "sourceId": "M25",
+      "sourceSha256": "a9791eff44ede034af6860b73200af715b3c0d7cadd101d6962dc61354121f41",
+      "originalBytes": 34507398,
+      "hdrToSdr": true,
+      "startSeconds": 0.5,
+      "durationSeconds": 10,
+      "posterTime": 1,
+      "width": 720,
+      "height": 1280,
+      "audio": false,
+      "activity": "ACT-128",
+      "purpose": "Staff operates the platform; owner-requested demonstration.",
+      "exports": [
+        {
+          "path": "assets/services/pack-estrella/plataforma-360-equipo.mp4",
+          "bytes": 2967883,
+          "sha256": "b6c420f519a4b4e0e292afc46eddba019398e2fb8593170b676e58f781fbd7d6"
+        },
+        {
+          "path": "assets/services/pack-estrella/plataforma-360-equipo.webp",
+          "bytes": 49094,
+          "sha256": "7874b2c04969515af17e4aaf262b6298b2ea6cc56c151ff168132748ee0b46b7"
+        }
+      ]
+    },
+    {
+      "sourceId": "M03",
+      "sourceSha256": "186f2f86aeed03ab908533077fc096a7679a28a0c291963b215279ca6729d7f8",
+      "originalBytes": 18350591,
+      "hdrToSdr": false,
+      "startSeconds": 0,
+      "durationSeconds": 9.775,
+      "posterTime": 1,
+      "width": 720,
+      "height": 1280,
+      "audio": false,
+      "activity": "ACT-135",
+      "purpose": "Aero360 aerial group result; M02 intentionally not duplicated.",
+      "exports": [
+        {
+          "path": "assets/services/pack-estrella/aero360-resultado.mp4",
+          "bytes": 2901498,
+          "sha256": "431f766df28e3ef0a71b4443f8a28af17d32a53faa4ea196091016ee6578f765"
+        },
+        {
+          "path": "assets/services/pack-estrella/aero360-resultado.webp",
+          "bytes": 135698,
+          "sha256": "393d2c5d30af37962fdabc0800a8bb25388eac0894c53eabb2b1f1800402a72f"
+        }
+      ]
+    },
+    {
+      "sourceId": "M42",
+      "sourceSha256": "80d2a722d0d10bd7e26b2aa166f775880ff530f702a39bb9486211a3ad69b51f",
+      "originalBytes": 27780202,
+      "hdrToSdr": false,
+      "startSeconds": 0,
+      "durationSeconds": 24.16,
+      "audio": false,
+      "activity": "ACT-147",
+      "purpose": "punto-foto",
+      "exports": [
+        {
+          "path": "assets/services/punto-foto/punto-foto.mp4",
+          "bytes": 6223085,
+          "sha256": "5e23ef1cf6d65fe6cbc3927c6ff99080b396508e829e3eacdc1bb9561dd9fff2"
+        },
+        {
+          "path": "assets/services/punto-foto/punto-foto.webp",
+          "bytes": 234220,
+          "sha256": "fd80af11f79460677ee383469fd4a67dafeafb49890d900ebe89df82ff7e67c3"
+        }
+      ]
+    },
+    {
+      "sourceId": "M30",
+      "sourceSha256": "fec523109a7621780fdf2cb7f116f46e34ac05aafded5b6ed554c5f5a7b386d5",
+      "originalBytes": 17499781,
+      "hdrToSdr": false,
+      "startSeconds": 0,
+      "durationSeconds": 10,
+      "audio": false,
+      "activity": "ACT-147",
+      "purpose": "punto-foto-grupo",
+      "exports": [
+        {
+          "path": "assets/services/punto-foto/punto-foto-grupo.mp4",
+          "bytes": 3209517,
+          "sha256": "6b58eb65e329611a97393c6fd8a70da76911a25a6dc627019b23392bd9975ea3"
+        },
+        {
+          "path": "assets/services/punto-foto/punto-foto-grupo.webp",
+          "bytes": 213876,
+          "sha256": "0b01c6b3bb4788c23e1d8c0652484040b8c740fc37ee53f2ccdd3323d7254b38"
+        }
+      ]
+    },
+    {
+      "sourceId": "M29",
+      "sourceSha256": "1bcc8297cbaa87a5e0ab2816ae02d6e265b7c9f2d8d8881530600b4c16938ad7",
+      "originalBytes": 11304522,
+      "hdrToSdr": false,
+      "startSeconds": 0,
+      "durationSeconds": 7.5,
+      "audio": false,
+      "activity": "ACT-147",
+      "purpose": "punto-foto-captura",
+      "exports": [
+        {
+          "path": "assets/services/punto-foto/punto-foto-captura.mp4",
+          "bytes": 1075480,
+          "sha256": "ebf13b7cdf8a38f38811fc774523f2ae187c47b147fc30f2d4cae8ff626813c9"
+        },
+        {
+          "path": "assets/services/punto-foto/punto-foto-captura.webp",
+          "bytes": 35206,
+          "sha256": "0a396fed658b9e83e7e164ec60a399682df7264c8440fa55685d63d7e8c2746e"
+        }
+      ]
+    },
+    {
+      "sourceId": "M41",
+      "sourceSha256": "3766941255acf4ca5339416b5c22279c104accd4671f1b3d3a551d67d4e59280",
+      "originalBytes": 161017,
+      "activity": "ACT-147",
+      "purpose": "punto-foto-lanzamiento",
+      "exports": [
+        {
+          "path": "assets/services/punto-foto/punto-foto-lanzamiento.webp",
+          "bytes": 54694,
+          "sha256": "44f924f0f2c1acf90d5de69858f58e3958f062b7b96c9a43278f57c47caaaa50"
+        }
+      ]
+    },
+    {
+      "sourceId": "M28",
+      "sourceSha256": "dbc37361e6b8746109eabc352563ba5cc675ffec75e0a42e46165ac2b7ac7cfa",
+      "originalBytes": 4184854,
+      "activity": "ACT-147",
+      "purpose": "punto-foto-rincon",
+      "exports": [
+        {
+          "path": "assets/services/punto-foto/punto-foto-rincon.webp",
+          "bytes": 647854,
+          "sha256": "49a9ebee2268b571acb562ab645830cfa5762e708043202f9ed57492f37e7f74"
+        }
+      ]
+    },
+    {
+      "sourceId": "M09",
+      "sourceSha256": "6a28c0a1923eefc8195fba1032dd255782656f937b3860229d14182794a4cf80",
+      "originalBytes": 20443101,
+      "hdrToSdr": false,
+      "startSeconds": 0,
+      "durationSeconds": 12,
+      "audio": false,
+      "activity": "ACT-147",
+      "purpose": "eco-de-amor",
+      "exports": [
+        {
+          "path": "assets/services/eco-de-amor/eco-de-amor.mp4",
+          "bytes": 2292271,
+          "sha256": "2bb633f4b3df7bb0e94f8a7edddc98e152cfa737dfedc377034a6010a2dd8666"
+        },
+        {
+          "path": "assets/services/eco-de-amor/eco-de-amor.webp",
+          "bytes": 59640,
+          "sha256": "389afad396ed20424405d746bdf6d27bb6176108012386716cce58022702891e"
+        }
+      ]
+    },
+    {
+      "sourceId": "M08",
+      "sourceSha256": "82d7956fee210fd971ea39481e46b52993128b137bd05dc529321147e04dc561",
+      "originalBytes": 13058630,
+      "hdrToSdr": false,
+      "startSeconds": 0,
+      "durationSeconds": 8,
+      "audio": false,
+      "activity": "ACT-147",
+      "purpose": "eco-de-amor-detalle",
+      "exports": [
+        {
+          "path": "assets/services/eco-de-amor/eco-de-amor-detalle.mp4",
+          "bytes": 2158899,
+          "sha256": "1ae2f2074b77d05f786c182b8b874cf05a5677a01fae492c2e2e84aec98012ad"
+        },
+        {
+          "path": "assets/services/eco-de-amor/eco-de-amor-detalle.webp",
+          "bytes": 44564,
+          "sha256": "03717dbb46ad96c2a57efcac9a31c3201a9a76e6959500bfb0ac24127b7f8e65"
+        }
+      ]
+    },
+    {
+      "sourceId": "M06",
+      "sourceSha256": "5d242a348996ebddd5c2030e72030f277efd9c5d38c4b8e247a776b9eacf6f41",
+      "originalBytes": 14838247,
+      "hdrToSdr": false,
+      "startSeconds": 0,
+      "durationSeconds": 7,
+      "audio": false,
+      "activity": "ACT-147",
+      "purpose": "arco-hexagonal",
+      "exports": [
+        {
+          "path": "assets/services/ceremonia/arco-hexagonal.mp4",
+          "bytes": 1729713,
+          "sha256": "fa2df82a5d52a997c47c065b1006f1733a0ed6b50345a2de695d78319fa082bd"
+        },
+        {
+          "path": "assets/services/ceremonia/arco-hexagonal.webp",
+          "bytes": 129734,
+          "sha256": "a3b62b27c4c9508aa653b51493fc43393a80216650e6f489d39694afa3690f18"
+        }
+      ]
+    },
+    {
+      "sourceId": "M07",
+      "sourceSha256": "6fa6701f892f9c3bbd2c4a6bdd37c10340d20f17eb1d9b1f49f2c42964b672c0",
+      "originalBytes": 4494880,
+      "activity": "ACT-147",
+      "purpose": "arco-estructura",
+      "exports": [
+        {
+          "path": "assets/services/ceremonia/arco-estructura.webp",
+          "bytes": 1148492,
+          "sha256": "9d116a6a52875f41c957ce5f817c2a0ad699043fd23dcabff09b3118ee350aab"
+        }
+      ]
+    }
+  ],
+  "heroPreviews": [
+    {
+      "sourceId": "M12",
+      "sourceSha256": "85d11f7bb0a2bd9b7c5648f24f3397604557298dbb7b9f2b90f19f554a7ef3f0",
+      "path": "assets/services/pack-estrella/fotocabina-preview.mp4",
+      "bytes": 341852,
+      "sha256": "d91d31e4905b0daee1e0895ee083bcf3f5a669a92602ba9c1a7091a62f0c03a5",
+      "startSeconds": 0,
+      "durationSeconds": 4.167,
+      "width": 432,
+      "height": 768,
+      "audio": false
+    },
+    {
+      "sourceId": "M23",
+      "sourceSha256": "fcc2c9808afdc91ec914689efbe7675d64e5d3910e704a9d7513bd6687007fcc",
+      "path": "assets/services/pack-estrella/celebracion-360-preview.mp4",
+      "bytes": 1678617,
+      "sha256": "a0d2924534bd7ef6afd9a5f16a0c67391303e12963a93eda14edc27fbd6471e5",
+      "startSeconds": 2.5,
+      "durationSeconds": 4,
+      "width": 720,
+      "height": 1280,
+      "audio": false,
+      "fps": 30,
+      "encodedFrom": "owner-original",
+      "crf": 20,
+      "maxRateKbps": 2800,
+      "activity": "ACT-128"
+    },
+    {
+      "sourceId": "M36",
+      "sourceSha256": "d8cde4e07021d38db3f55728bf2c2bc82d8a92695729628627f285a30681bb46",
+      "path": "assets/services/pack-estrella/selfie-mirror-preview.mp4",
+      "bytes": 1677098,
+      "sha256": "67069cd3163f8e6febf7ff4f14df958ec0e232060a94c716d03974e3cbe1e77f",
+      "startSeconds": 2,
+      "durationSeconds": 4,
+      "width": 720,
+      "height": 1280,
+      "audio": false,
+      "fps": 30,
+      "encodedFrom": "owner-original",
+      "crf": 20,
+      "maxRateKbps": 2800,
+      "activity": "ACT-131"
+    },
+    {
+      "path": "assets/services/pack-estrella/aero360-preview.mp4",
+      "bytes": 1677026,
+      "sha256": "6a39f3323139ae02ad0db02718dfa9bcafa5bedafe2074cf9d40beee3fb8d760",
+      "sourceId": "M03",
+      "sourceSha256": "186f2f86aeed03ab908533077fc096a7679a28a0c291963b215279ca6729d7f8",
+      "startSeconds": 0,
+      "durationSeconds": 4,
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "audio": false,
+      "encodedFrom": "owner-original",
+      "crf": 20,
+      "maxRateKbps": 2800,
+      "activity": "ACT-135"
+    },
+    {
+      "path": "assets/services/punto-foto/punto-foto-preview.mp4",
+      "bytes": 1717512,
+      "sha256": "9d0e443d555f524afbd56a53a8f999a3424e8ed338ad8ee27729f2b2db803c73",
+      "sourceId": "M42",
+      "sourceSha256": "80d2a722d0d10bd7e26b2aa166f775880ff530f702a39bb9486211a3ad69b51f",
+      "startSeconds": 0,
+      "durationSeconds": 4,
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "audio": false,
+      "encodedFrom": "owner-original",
+      "activity": "ACT-147"
+    },
+    {
+      "path": "assets/services/eco-de-amor/eco-de-amor-preview.mp4",
+      "bytes": 1223861,
+      "sha256": "719d4042f192464c710812c129699b139413d3b201e69046e57accb0ef0bd234",
+      "sourceId": "M09",
+      "sourceSha256": "6a28c0a1923eefc8195fba1032dd255782656f937b3860229d14182794a4cf80",
+      "startSeconds": 0,
+      "durationSeconds": 4,
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "audio": false,
+      "encodedFrom": "owner-original",
+      "activity": "ACT-147"
+    },
+    {
+      "path": "assets/services/ceremonia/arco-hexagonal-preview.mp4",
+      "bytes": 1469821,
+      "sha256": "cd593700127ad751f3364629476de39a0a5da1d6cc74c294fdfa44ec53eb0f0d",
+      "sourceId": "M06",
+      "sourceSha256": "5d242a348996ebddd5c2030e72030f277efd9c5d38c4b8e247a776b9eacf6f41",
+      "startSeconds": 0,
+      "durationSeconds": 4,
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "audio": false,
+      "encodedFrom": "owner-original",
+      "activity": "ACT-147"
+    }
+  ],
+  "references": [
+    {
+      "sourceId": "R01",
+      "sourceSha256": "9a2ea1deddab1b95b9ba3efe566712ef6a7b6644305e9bab8cfe00f3d42f54f5",
+      "originalBytes": 108995,
+      "kind": "Owner-provided personalization reference; illustrative, not verified delivered-product photograph",
+      "exports": [
+        {
+          "path": "assets/services/pack-estrella/pendrive-personalizado.webp",
+          "bytes": 45898,
+          "sha256": "27b5747b7391e08b80357c3c11e139bce9f4d678269a04e0cd7aa6d09635217a"
+        }
+      ]
+    }
+  ],
+  "videoAudioPolicy": "All public MP4 derivatives contain video only. Private original media and their audio are unchanged."
+}

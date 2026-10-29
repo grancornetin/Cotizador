@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#F5F0E8">
+  <meta name="color-scheme" content="light">
+  <title>Selfie Mirror personalizado | Herrera Producciones</title>
+  <meta name="description" content="Un rincón personalizado para las selfies de tu celebración. Selfie Mirror por {{price.fixed}} más traslado. Valor final para particulares. Empresas con boleta o factura: + 19 % IVA., con instalación y retiro. Consulta tu fecha.">
+  <meta property="og:title" content="Selfie Mirror · Las mejores poses pasan por aquí.">
+  <meta property="og:description" content="Tu teléfono, tus invitados y un rincón para recordar. Selfie Mirror personalizado por {{price.fixed}} más traslado. Valor final para particulares. Empresas con boleta o factura: + 19 % IVA.. Herrera Producciones.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:url" content="https://cotizador-grancornetin.vercel.app/servicios/selfie-mirror/">
+  <meta property="og:image" content="https://cotizador-grancornetin.vercel.app/assets/services/pack-estrella/selfie-mirror.webp">
+  <meta property="og:image:alt" content="Invitadas fotografiándose con sus teléfonos frente al Selfie Mirror.">
+  <link rel="canonical" href="https://cotizador-grancornetin.vercel.app/servicios/selfie-mirror/">
+  <link rel="icon" href="../../assets/icons/app.svg" type="image/svg+xml">
+  <link rel="preload" href="../../assets/fonts/sora-600.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../../src/styles/service-page.css">
+  <link rel="stylesheet" href="../../src/styles/selfie-mirror.css">
+  <script type="module" src="../../src/services/page.js"></script>
+</head>
+<body data-service="selfie-mirror">
+  <a class="skip" href="#contenido">Ir al contenido</a>
+  <header class="site-header wrap"><a href="#titulo" class="brand" aria-label="Herrera Producciones, inicio de Selfie Mirror"><img src="../../assets/branding/logo.png" alt="Herrera Producciones" width="2388" height="728"></a><nav aria-label="Navegación de la página"><a href="#tu-servicio">Tu espejo</a><a class="header-contact" href="#consulta">Tu fecha <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></nav></header>
+  <main id="contenido">
+    <noscript><p class="wrap no-script">Selfie Mirror: {{price.fixed}} CLP durante tu celebración, más traslado. Puedes consultar directamente por WhatsApp.</p></noscript>
+    <section class="mirror-hero wrap" aria-labelledby="titulo">
+      <h1 id="titulo">Selfie <span class="mirror-name">Mirror<span aria-hidden="true">.</span></span></h1>
+      <div class="mirror-scene">
+        <h2 class="hero-statement">{{hero.title}}</h2>
+        <figure class="mirror-window"><span class="hero-preview-frame" data-preview="../../assets/services/pack-estrella/selfie-mirror-preview.mp4"><img src="../../assets/services/pack-estrella/selfie-mirror.webp" alt="Invitadas fotografiándose con sus teléfonos frente al Selfie Mirror." width="720" height="1280" decoding="async" fetchpriority="high"></span><figcaption>Su teléfono. Su mejor pose.</figcaption><div class="hero-preview-controls"><button type="button" data-preview-toggle hidden>Pausar vistas previas</button></div></figure>
+        <p class="mirror-lead">Un espejo, tu teléfono y esas fotos que nacen sin planearlas. Creamos el rincón; ustedes ponen las poses.</p>
+        <div class="mirror-action"><a class="button primary" data-hero-action href="#consulta">Consultar mi fecha <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><p class="mirror-price"><strong>{{price.fixed}}</strong> <span>Valor final para particulares. Empresas con boleta o factura: + 19 % IVA · durante tu celebración · más traslado</span></p></div>
+      </div>
+    </section>
+    <section class="experience-section mirror-story" id="experiencia" aria-labelledby="experience-title"><div class="wrap">
+      <div class="section-heading"><h2 id="experience-title">Un rincón bonito.<br>Una pose más.</h2><p>Una selfie juntos, otra con amigos. El espejo queda disponible durante la celebración para que cada invitado lo disfrute con su propio teléfono.</p></div>
+      <div class="experience-panel">
+        <div class="experience-visual"><h3 class="media-heading">Las selfies y los detalles</h3><div class="experience-media" data-media-slot="mirror" aria-label="Selfie Mirror: uso con teléfonos y detalles del montaje"></div></div>
+        <div class="experience-detail"><h3>Esto incluye tu Selfie Mirror</h3><ul class="included">{{included}}</ul><p>Coordinamos contigo el diseño del vinilo y el montaje para que el rincón acompañe tu celebración.</p><a class="mirror-story-link" href="#tu-servicio">Conocer tu espejo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+      </div>
+    </div></section>
+    <section class="configure mirror-configure wrap" id="tu-servicio" aria-labelledby="configure-title">
+      <div class="configure-copy"><h2 id="configure-title">Un rincón<br>que se sienta tuyo.</h2><p>Vinilo personalizado, neón y un set Disco o Romance según disponibilidad. Conversemos sobre tu celebración para coordinar los detalles.</p><div class="duration-explainer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><p><strong>Durante tu celebración.</strong> Acordamos los horarios de instalación y retiro al cotizar.</p></div></div>
+      <div id="pack-form" class="pack-form mirror-offer">
+        <h3>Tu Selfie Mirror</h3><p>Instalado, personalizado y listo para las selfies.</p>
+        <div class="price-summary"><div><span>Durante tu celebración</span><output id="pack-total" aria-live="polite" aria-atomic="true">{{price.fixed}}</output></div><p>Valor final para particulares. Empresas con boleta o factura: + 19 % IVA · <strong>más traslado</strong></p><p class="field-help">Revisamos ubicación, set y personalización contigo. El total final queda en tu cotización.</p></div>
+        <p class="mirror-care">Lo instalamos y retiramos. Durante el evento queda sin operador y a cargo del cuidado del cliente.</p>
+        <a class="mirror-offer-link" href="#consulta">Conversemos de mi espejo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      </div>
+    </section>
+    {{inquiry}}
+    <section class="faq-section wrap" id="dudas" aria-labelledby="faq-title"><div><h2 id="faq-title">Todo claro,<br>antes de posar.</h2><p>Lo que conviene saber sobre tu Selfie Mirror.</p></div><div class="faqs">{{faq}}</div></section>
+    <section class="mirror-combine wrap" aria-labelledby="combine-title"><div><h2 id="combine-title">Más formas<br>de recordar tu fiesta.</h2><p>Pack Estrella reúne Selfie Mirror, Fotocabina y una experiencia 360. Explora el pack para sumar fotos impresas y vídeos a tu celebración.</p></div><a class="button primary" href="../pack-estrella/">Ver Pack Estrella <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></section>
+    <section class="closing wrap"><p>Una selfie juntos.<br><strong>Y otra, por si acaso.</strong></p><a href="#consulta" class="button primary">Conversemos de tu fecha <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></section>
+  </main>
+  <footer class="site-footer wrap"><img src="../../assets/branding/logo.png" alt="Herrera Producciones" width="2388" height="728"><p>Talca · San Clemente · Región del Maule</p><a href="https://wa.me/{{contact.whatsapp}}">{{contact.phone}}</a><a href="#titulo">Volver al inicio <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></a></footer>
+  <aside class="mobile-consult" aria-label="Consultar Selfie Mirror"><div><strong id="sticky-total">{{price.fixed}}</strong><span id="sticky-pending">Valor final para particulares. Empresas con boleta o factura: + 19 % IVA · + traslado</span></div><a href="#consulta" class="button primary">Consultar fecha <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></aside>
+</body>
+</html>

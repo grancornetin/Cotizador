@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Cotizador</title>
+  <desc id="desc">Documento con detalle y total. Geometría original de Cotizador, ACT-027; fuente scripts/create_app_icons.py.</desc>
+  <metadata>Source-authored by Codex /root/release_audit, 2026-10-09; no external or AI-generated raster sources.</metadata>
+  <rect width="512" height="512" fill="#191817"/>
+  <path d="M156 108H300L380 188V380Q380 404 356 404H156Q132 404 132 380V132Q132 108 156 108Z" fill="#f5f1e8"/>
+  <path d="M300 108V188H380Z" fill="#ceb077"/>
+  <path d="M180 232H332M180 274H292" fill="none" stroke="#191817" stroke-width="18" stroke-linecap="round"/>
+  <rect x="180" y="316" width="152" height="36" rx="10" fill="#ceb077"/>
+</svg>

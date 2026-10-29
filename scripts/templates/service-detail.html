@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f5f0e8">
+  <title>{{service.name}} · Herrera Producciones</title><meta name="description" content="{{meta.description}}">
+  <link rel="canonical" href="https://cotizador-grancornetin.vercel.app/servicios/{{service.slug}}/">
+  <meta property="og:title" content="{{service.name}} · Herrera Producciones"><meta property="og:description" content="{{meta.description}}"><meta property="og:type" content="website"><meta property="og:image" content="https://cotizador-grancornetin.vercel.app{{meta.image}}">
+  <link rel="icon" href="/assets/icons/icon-192.png"><link rel="stylesheet" href="/src/styles/service-page.css"><link rel="stylesheet" href="/src/styles/service-detail.css"><script type="module" src="/src/services/page.js"></script>
+</head>
+<body class="detail-page detail-{{detail.kind}}" data-service="{{service.slug}}">
+  <a class="skip" href="#contenido">Ir al contenido</a>
+  <header class="site-header wrap"><a class="brand" href="/packs/" aria-label="Herrera Producciones · Ver packs"><img src="/assets/branding/logo.png" alt="Herrera Producciones" width="2388" height="728"></a><nav aria-label="Navegación principal"><a href="/packs/">Ver packs</a><a href="#experiencia">La experiencia</a><a class="header-contact" href="#consulta">Tu fecha <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></nav></header>
+  <main id="contenido">
+    {{detail.noScript}}
+    <section class="detail-hero wrap" aria-labelledby="titulo">
+      <div class="detail-intro"><h1 id="titulo">{{service.name}}</h1><h2>{{hero.title}}</h2><p class="detail-lead">{{hero.description}}</p><a class="button primary" data-hero-action href="#consulta">Conversemos de tu fecha <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><p class="detail-hero-price"><strong>{{price.initial}}</strong> <span>Valor final para particulares. Empresas con boleta o factura: + 19 % IVA · {{price.scope}} · más traslado</span></p></div>
+      <div class="detail-hero-media">{{hero.media}}</div>
+    </section>
+    <section class="detail-story wrap" id="experiencia" aria-labelledby="story-title"><div><h2 id="story-title">{{detail.storyTitle}}</h2><p>{{detail.story}}</p>{{detail.support}}</div><div class="detail-included"><h3>Esto incluye tu experiencia</h3><ul class="included">{{included}}</ul>{{detail.components}}</div></section>
+    <section class="detail-proof wrap" aria-labelledby="proof-title"><div class="detail-proof-heading"><h2 id="proof-title">{{detail.title}}</h2><p>{{detail.body}}</p></div>{{detail.media}}</section>
+    <section class="configure wrap detail-configure" id="tu-servicio" aria-labelledby="configure-title"><div class="configure-copy"><h2 id="configure-title">Hagámoslo<br>a tu manera.</h2><p>Elige las opciones para tu celebración. Revisamos contigo el horario, el lugar y los detalles antes de confirmar.</p><p class="detail-tax-note">{{taxNotice}}</p></div>
+      <form id="pack-form" class="pack-form">{{detail.variants}}{{detail.durationField}}{{detail.equipment}}{{detail.extras}}{{detail.pendrive}}<div class="price-summary"><div><span>Tu selección · valor neto</span><output id="pack-total" aria-live="polite" aria-atomic="true">{{price.initial}}</output></div><p>CLP · <strong>más traslado</strong></p><p class="field-help">Si solicitas factura, se suma el 19% de IVA. El total final queda en tu cotización.</p></div></form>
+    </section>
+    <section class="detail-requirements wrap" aria-labelledby="requirements-title"><h2 id="requirements-title">Preparemos<br>el lugar.</h2><div><ul>{{detail.requirements}}</ul><p>Cuéntanos tu tipo de celebración, fecha y comuna. Nuestro equipo revisa el espacio y la disponibilidad antes de confirmar.</p></div></section>
+    {{inquiry}}
+    <section class="faq-section wrap" id="dudas" aria-labelledby="faq-title"><div><h2 id="faq-title">Todo claro,<br>antes de celebrar.</h2><p>Las respuestas para elegir con tranquilidad.</p></div><div class="faqs">{{faq}}</div></section>
+    <section class="detail-more wrap"><div><h2>Más formas<br>de recordar.</h2><p>Compara las experiencias y encuentra la combinación que va con tu celebración.</p></div><a class="detail-text-link" href="/packs/">Explorar los packs <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></section>
+  </main>
+  <footer class="site-footer wrap"><img src="/assets/branding/logo.png" alt="Herrera Producciones" width="2388" height="728"><p>Talca · San Clemente · Región del Maule</p><a href="https://wa.me/{{contact.whatsapp}}">{{contact.phone}}</a><a href="#titulo">Volver al inicio <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></a></footer>
+  <aside class="mobile-consult" aria-label="Consultar {{service.name}}"><div><strong id="sticky-total">{{price.initial}}</strong><span id="sticky-pending">Valor final para particulares. Empresas con boleta o factura: + 19 % IVA · + traslado</span></div><a href="#consulta" class="button primary">Consultar fecha <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></aside>
+</body></html>
