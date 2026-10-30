@@ -114,11 +114,6 @@ a{color:inherit}
 @keyframes marq{to{transform:translateX(-50%)}}
 .reel.first .reel-copy{padding-bottom:calc(58px + env(safe-area-inset-bottom))}
 .need{font-size:13px;line-height:19px;color:var(--ivory-70)}
-/* polaroids */
-.polaroids{position:relative;height:250px;margin:6px 0 14px}
-.pol{position:absolute;width:40%;padding:7px 7px 22px;background:var(--ivory);border-radius:4px;top:0}
-.pol img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
-.p1{left:2%;rotate:-7deg;top:12px}.p2{left:30%;rotate:3deg;z-index:2}.p3{right:2%;rotate:8deg;top:16px}
 /* ventanita */
 .sheet{position:fixed;inset:0;z-index:50;display:grid;align-items:end;justify-items:center}
 .sheet[hidden]{display:none}
@@ -128,3 +123,24 @@ a{color:inherit}
 .sheet-box h2{font-size:28px;line-height:32px;font-weight:700}
 .sheet-x{position:absolute;right:10px;top:8px;width:44px;height:44px;border:0;background:transparent;color:var(--ivory);font:400 32px/1 Montserrat,sans-serif;cursor:pointer}
 .note{font-size:13px;line-height:19px;color:var(--ivory-70)}
+
+/* carrusel de polaroids en movimiento */
+.pwrap{margin:2px calc(var(--gutter)*-1) 0}
+.pcar{display:flex;gap:6px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding-inline:64px;padding:18px 64px 14px;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.pcar::-webkit-scrollbar{display:none}
+.pslide{flex:0 0 58%;scroll-snap-align:center;margin:0;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .35s}
+.pslide .pol2{background:var(--ivory);color:var(--ink);padding:8px 8px 6px;border-radius:4px;rotate:-2deg}
+.pslide:nth-child(even) .pol2{rotate:2deg}
+.pslide:not(.on){transform:scale(.92);opacity:.6}
+.pv2{aspect-ratio:4/5;background:#000;border-radius:2px;overflow:hidden}
+.pv2 video{width:100%;height:100%;object-fit:cover}
+.pol2 figcaption{font:600 13px/20px Sora,sans-serif;padding:7px 2px 3px;text-align:center;letter-spacing:-.01em}
+.pdots{display:flex;justify-content:center;gap:2px}
+.pdot{appearance:none;width:28px;height:28px;border:0;background:transparent;cursor:pointer;position:relative}
+.pdot::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;border-radius:50%;background:var(--ivory);opacity:.4;translate:-50% -50%;transition:opacity .2s,transform .2s}
+.pdot.on::after{opacity:1;background:var(--gold);transform:scale(1.4)}
+@media (min-width:860px){.pwrap{margin-inline:0}}
+@media (max-height:700px){.pslide{flex-basis:48%}}
+.reel-copy{min-width:0}.reel-copy>*{min-width:0}
+.pwrap{min-width:0;max-width:none}
+.pcar{min-width:0}

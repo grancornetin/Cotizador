@@ -119,12 +119,30 @@
       var v = $('video', e.target), i = slides.indexOf(e.target);
       if (e.isIntersecting) {
         dots.forEach(function (d, j) { d.classList.toggle('on', j === i); });
-        if (v && !noMotion) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        if (v && !noMotion && !e.target.classList.contains('last')) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
         if (i === 1) once('vc', function () { track('ViewContent', { content_name: 'Sets', content_category: 'fotocabina' }, true); });
         if (i > 0) once('slide' + i, function () { track('Reel_Visto', { n: i + 1, plan: e.target.getAttribute('data-svc') || (e.target.classList.contains('info') ? 'reservar' : 'cierre') }); });
         if (i === slides.length - 1) once('end', function () { track('Scroll_90', {}); });
-      } else if (v) { v.pause(); }
+      } else if (v && !e.target.classList.contains('last')) { v.pause(); }
     }); }, { root: box, threshold: 0.6 });
     slides.forEach(function (s) { io.observe(s); });
+  }
+
+  /* ---------- Carrusel de polaroids (clips en movimiento) ---------- */
+  var pcar = $('#pcar');
+  if (pcar) {
+    var ps = $$('.pslide', pcar), pd = $$('.pdot'), seen = {};
+    function setOn(i) { ps.forEach(function (s, k) { s.classList.toggle('on', k === i); }); pd.forEach(function (d, k) { d.classList.toggle('on', k === i); }); }
+    setOn(0);
+    pd.forEach(function (d, i) { d.addEventListener('click', function () { ps[i].scrollIntoView({ behavior: noMotion ? 'auto' : 'smooth', inline: 'center', block: 'nearest' }); }); });
+    if ('IntersectionObserver' in window) {
+      var pio = new IntersectionObserver(function (es) { es.forEach(function (e) {
+        var v = $('video', e.target), i = ps.indexOf(e.target);
+        if (e.isIntersecting) { setOn(i); if (v && !noMotion) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          if (i > 0 && !seen[i]) { seen[i] = 1; track('Carrusel_Visto', { n: i + 1 }); } }
+        else if (v) { v.pause(); }
+      }); }, { threshold: 0.7 });
+      ps.forEach(function (s) { pio.observe(s); });
+    }
   }
 })();
