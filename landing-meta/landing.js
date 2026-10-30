@@ -12,10 +12,10 @@
       items: ['Hasta 6 personas por sesión', 'Fotos impresas ilimitadas durante el servicio', 'Cotillón y tira personalizada con tu nombre o logo', 'Álbum opcional: +$30.000'],
       note: 'La hora es el tiempo de funcionamiento de la fotocabina en tu evento.' },
     duo: { name: 'el Dúo Fiesta (Fotocabina + 360)', title: 'Dúo Fiesta', kicker: 'Fotocabina + 360', price: { 1: 190000, 2: 250000, 3: 380000 },
-      items: ['Fotocabina: fotos impresas ilimitadas durante el servicio', 'Plataforma 360 (hasta 4 personas por video) o Aero360 (hasta 12, al aire libre), según tu lugar', 'Videos personalizados que tus invitados descargan con un QR (necesita señal)'],
+      items: ['Fotocabina: fotos impresas ilimitadas durante el servicio', 'Plataforma 360 (hasta 4 personas por video) o Aero360 (hasta 12, al aire libre), según disponibilidad', 'Videos personalizados que tus invitados descargan con un QR (necesita señal)'],
       note: 'Fotocabina y 360 funcionan durante las horas que elijas.' },
     pack: { name: 'el Pack Estrella (Fotocabina + 360 + Selfie Mirror)', title: 'Pack Estrella', kicker: 'Todo en uno', price: { 1: 240000, 2: 300000, 3: 430000 },
-      items: ['Fotocabina: fotos impresas ilimitadas durante el servicio', '360 o Aero360, según tu lugar: videos personalizados con QR', 'Selfie Mirror: un espejo para que tus invitados se fotografíen con su celular; se queda instalado todo el evento'],
+      items: ['Fotocabina: fotos impresas ilimitadas durante el servicio', '360 o Aero360, según disponibilidad: videos personalizados con QR', 'Selfie Mirror: un espejo para que tus invitados se fotografíen con su celular; se queda instalado todo el evento'],
       note: 'Fotocabina y 360 funcionan durante las horas que elijas. El espejo se queda todo el evento.' }
   };
   var GENERAL = 'Hola, vi el video de la fotocabina y quiero cotizar para mi evento. ¿Me ayudan?';
