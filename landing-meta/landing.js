@@ -19,6 +19,14 @@
       note: 'Fotocabina y 360 funcionan durante las horas que elijas. El espejo se queda todo el evento.' }
   };
   var GENERAL = 'Hola, vi el video de la fotocabina y quiero cotizar para mi evento. ¿Me ayudan?';
+  /* Visita que llega desde el anuncio de Meta: lo recordamos en la sesión y marcamos el mensaje de WhatsApp */
+  var FROM_AD = false;
+  try {
+    var qs = location.search || '';
+    if (/[?&]utm_source=meta\b/.test(qs) || /[?&]fbclid=/.test(qs)) { FROM_AD = true; try { sessionStorage.setItem('hp_ad', '1'); } catch (e) {} }
+    else { try { FROM_AD = sessionStorage.getItem('hp_ad') === '1'; } catch (e) {} }
+  } catch (e) {}
+  if (FROM_AD) GENERAL = 'Hola, vi el anuncio de la fotocabina y quiero cotizar para mi evento. ¿Me ayudan?';
 
   var testLog = (window.__landingEvents = []);
   var isLocal = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || /\.localhost$/.test(location.hostname);
@@ -51,7 +59,7 @@
   function setWa(a, msg) { a.href = waUrl(msg); a.target = '_blank'; a.rel = 'noopener'; }
   function msgFor(key, h) {
     var s = SETS[key];
-    return 'Hola, quiero cotizar ' + s.name + ' por ' + hword(h) + ' (' + money(s.price[h]) + '). ¿Tienen disponible mi fecha?';
+    return (FROM_AD ? 'Hola, vi el anuncio y quiero cotizar ' : 'Hola, quiero cotizar ') + s.name + ' por ' + hword(h) + ' (' + money(s.price[h]) + '). ¿Tienen disponible mi fecha?';
   }
 
   /* ---------- Sets: horas, precio y mensaje ---------- */
