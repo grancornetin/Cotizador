@@ -37,10 +37,10 @@
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
       t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
     }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    window.fbq('init', PIXEL_ID); window.fbq('track', 'PageView');
+    window.fbq('init', PIXEL_ID); window.fbq('track', 'PageView', { origen_trafico: FROM_AD ? 'anuncio' : 'directo', landing: LANDING });
   }
   function track(name, params, standard) {
-    params = params || {}; params.landing = LANDING;
+    params = params || {}; params.landing = LANDING; params.origen_trafico = FROM_AD ? 'anuncio' : 'directo';
     testLog.push({ name: name, params: params, standard: !!standard });
     try { if (isLocal && window.console) console.log('[evento]', name, params); } catch (e) {}
     try { if (window.fbq) window.fbq(standard ? 'track' : 'trackCustom', name, params); } catch (e) {}
