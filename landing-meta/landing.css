@@ -143,6 +143,7 @@ a{color:inherit}
 @media (min-width:860px){.fan{max-width:420px;margin-inline:auto}}
 @media (max-height:820px){.pv2{aspect-ratio:6/5}}
 @media (max-height:700px){.pv2{aspect-ratio:3/2}.fan{gap:8px 12px;margin:2px 0 0}.reel.last .motto{display:none}}
-.fp:nth-child(2) .pv2 video{object-position:50% 8%}
-.fp:nth-child(3) .pv2 video{object-position:50% 12%}
+.fp:nth-child(2) .pv2 video{object-position:50% 24%}
+.fp:nth-child(3) .pv2 video{object-position:50% 26%}
 .fp:nth-child(1) .pv2 video{object-position:50% 40%}
+.fp:nth-child(4) .pv2 video{object-position:50% 25%}
