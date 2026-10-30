@@ -72,11 +72,14 @@ a{color:inherit}
 .safe b{color:var(--gold)}
 
 /* cierre */
-.reel.last{background:var(--cherry)}
+.reel.last{background:var(--ink)}
+.reel.last h2{color:var(--ivory)}
+.reel.last .motto{color:var(--gold)}
+.reel.last .small{color:var(--ivory-70);opacity:1}
 .lead{font-size:19px;line-height:27px}
 .req{list-style:none;padding:0;display:grid;gap:6px;margin-top:6px}
 .req li{position:relative;padding-left:24px;font-size:14px;line-height:20px}
-.req li::before{content:"";position:absolute;left:2px;top:6px;width:10px;height:5px;border-left:2px solid var(--ivory);border-bottom:2px solid var(--ivory);transform:rotate(-45deg)}
+.req li::before{content:"";position:absolute;left:2px;top:6px;width:10px;height:5px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg)}
 .small{font-size:12.5px;line-height:18px;opacity:.9}
 .motto{font:600 15px/22px Sora,sans-serif;letter-spacing:-.02em;margin-top:6px}
 
@@ -112,7 +115,7 @@ a{color:inherit}
 .reel.first .reel-copy{padding-bottom:calc(58px + env(safe-area-inset-bottom))}
 .need{font-size:13px;line-height:19px;color:var(--ivory-70)}
 /* polaroids */
-.polaroids{position:relative;height:236px;margin:6px 0}
+.polaroids{position:relative;height:250px;margin:6px 0 14px}
 .pol{position:absolute;width:40%;padding:7px 7px 22px;background:var(--ivory);border-radius:4px;top:0}
 .pol img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
 .p1{left:2%;rotate:-7deg;top:12px}.p2{left:30%;rotate:3deg;z-index:2}.p3{right:2%;rotate:8deg;top:16px}
