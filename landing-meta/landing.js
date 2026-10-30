@@ -128,21 +128,15 @@
     slides.forEach(function (s) { io.observe(s); });
   }
 
-  /* ---------- Carrusel de polaroids (clips en movimiento) ---------- */
-  var pcar = $('#pcar');
-  if (pcar) {
-    var ps = $$('.pslide', pcar), pd = $$('.pdot'), seen = {};
-    function setOn(i) { ps.forEach(function (s, k) { s.classList.toggle('on', k === i); }); pd.forEach(function (d, k) { d.classList.toggle('on', k === i); }); }
-    setOn(0);
-    pd.forEach(function (d, i) { d.addEventListener('click', function () { ps[i].scrollIntoView({ behavior: noMotion ? 'auto' : 'smooth', inline: 'center', block: 'nearest' }); }); });
-    if ('IntersectionObserver' in window) {
-      var pio = new IntersectionObserver(function (es) { es.forEach(function (e) {
-        var v = $('video', e.target), i = ps.indexOf(e.target);
-        if (e.isIntersecting) { setOn(i); if (v && !noMotion) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-          if (i > 0 && !seen[i]) { seen[i] = 1; track('Carrusel_Visto', { n: i + 1 }); } }
-        else if (v) { v.pause(); }
-      }); }, { threshold: 0.7 });
-      ps.forEach(function (s) { pio.observe(s); });
-    }
+  /* ---------- Abanico de polaroids (clips en movimiento, solo al ver el cierre) ---------- */
+  var fan = $('.fan');
+  if (fan && 'IntersectionObserver' in window) {
+    var fv = $$('video', fan), fseen = false;
+    new IntersectionObserver(function (es) { es.forEach(function (e) {
+      fv.forEach(function (v) {
+        if (e.isIntersecting && !noMotion) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); }
+      });
+      if (e.isIntersecting && !fseen) { fseen = true; track('Carrusel_Visto', {}); }
+    }); }, { threshold: 0.5 }).observe(fan);
   }
 })();
