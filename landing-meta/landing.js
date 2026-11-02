@@ -80,7 +80,9 @@
     }); });
     render();
   });
-  $$('a.wa:not([data-svc-btn]):not(#sh-btn)').forEach(function (a) { setWa(a, GENERAL); });
+  /* Botones generales: marcamos desde cuál se escribe, para saberlo en el chat de WhatsApp */
+  var MARCA = { hero: ' (arriba)', cierre: ' (final)' };
+  $$('a.wa:not([data-svc-btn]):not(#sh-btn)').forEach(function (a) { setWa(a, GENERAL + (MARCA[a.getAttribute('data-origin')] || '')); });
 
   /* ---------- Ventanita: qué incluye ---------- */
   var sheet = $('#sheet'), lastFocus = null, openKey = null;
