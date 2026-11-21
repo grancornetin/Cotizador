@@ -130,6 +130,24 @@
     slides.forEach(function (s) { io.observe(s); });
   }
 
+  /* ---------- Carga anticipada: mientras se mira la portada, se bajan los videos siguientes, uno por uno ---------- */
+  var slow = noMotion || /(^|-)2g$/.test(conn.effectiveType || '');
+  if (!slow) {
+    var queue = $$('.reel:not(.first) > video').concat($$('.fan video')), started = false;
+    var warm = function (i) {
+      if (i >= queue.length) return;
+      var v = queue[i], moved = false;
+      var next = function () { if (moved) return; moved = true; warm(i + 1); };
+      v.preload = 'auto';
+      v.addEventListener('canplaythrough', next, { once: true });
+      setTimeout(next, 5000);
+      try { v.load(); } catch (e) {}
+    };
+    var go = function () { if (started) return; started = true; warm(0); };
+    var hv = $('#hero-video');
+    if (hv && hv.readyState < 4) { hv.addEventListener('canplaythrough', go, { once: true }); setTimeout(go, 3500); } else { go(); }
+  }
+
   /* ---------- Abanico de polaroids (clips en movimiento, solo al ver el cierre) ---------- */
   var fan = $('.fan');
   if (fan && 'IntersectionObserver' in window) {
